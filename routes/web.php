@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // Route::get('/cards', function () {
@@ -41,3 +41,4 @@ Route::get('/scrollanimation', [FrontController::class, 'scroll']);
 //     return view('layouts.scrollanimation');
 // });
 Route::get('/splitpage',[FrontController::class,'split']);
+Route::get('/example',[FrontController::class,'example']);

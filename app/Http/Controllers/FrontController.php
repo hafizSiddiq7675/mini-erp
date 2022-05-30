@@ -24,11 +24,15 @@ class FrontController extends Controller
     }
     public function scroll()
     {
-        return view('layouts.blurryloading');
+        return view('layouts.scrollanimation');
     }
     public function split()
     {
         return view('layouts.splitpage');
+    }
+    public function example()
+    {
+        return view('layouts.example');
     }
 
 
