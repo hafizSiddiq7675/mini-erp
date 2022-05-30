@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChartOfAccountsTable extends Migration
+class Accounts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateChartOfAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ChartOfAccounts', function (Blueprint $table) {
+        //
+        //
+        Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('account_name');
-            $table->enum('account_type', ['asset', 'liability', 'capital', 'expense', 'revenue']);
-            $table->boolean('is_parent');
-            $table->unsignedBigInteger('parent_account_id')->default(true);
+            $table->string('account_type');
+            $table->bigInteger('parent_id');
+            $table->boolean('is_parent')->defualt(false);
             $table->timestamps();
         });
     }
@@ -30,6 +32,7 @@ class CreateChartOfAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ChartOfAccounts');
+        //
+        Schema::dropIfExists('accounts');
     }
 }
